@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">sandunsampath</string>
+    <string name="button">Click Me</string>
+    <string name="todo">TODO</string>
+    <string name="search">Search</string>
+    <string name="addtodo_screen">AddToDo Screen</string>
+    <string name="add_todo_title">add new title</string>
+    <string name="add_todo_description">add new description</string>
+    <string name="add">Add</string>
+    <string name="textview">TextView</string>
+    <string name="search_todo">search todo</string>
+    <string name="detail_title">titile</string>
+    <string name="detail_description">description</string>
+    <string name="detail_btnDelete">Delete</string>
+    <string name="detail_btnEdit">Edit</string>
+</resources>
