@@ -3,7 +3,9 @@ package com.example.sandunsampath
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         // get reference to ImageView
         val image = findViewById<ImageView>(R.id.addToDoScreen)
         todoRecycleView = findViewById<RecyclerView>(R.id.todoList)
+        val searchView = findViewById<SearchView>(R.id.searchView)
 
         todoRecycleView.layoutManager = LinearLayoutManager(this)
         todoRecycleView.setHasFixedSize(true)
@@ -49,7 +52,28 @@ class MainActivity : AppCompatActivity() {
             // your code to perform when the user clicks on the ImageView
             Toast.makeText(this@MainActivity, "You clicked on ImageView.", Toast.LENGTH_SHORT).show()
         }
+
+        val adaptor : ArrayAdapter<ToDoModel> = ArrayAdapter(this,android.R.layout.simple_list_item_1,todoList)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchView.clearFocus()
+                if (todoList.contains(query)){
+                    adaptor.filter.filter(query)
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adaptor.filter.filter(newText)
+                return false
+            }
+
+        })
+
+
     }
+
 
     //method to get todo's from firebase
     private fun getToDoData() {
