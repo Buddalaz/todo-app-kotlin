@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(myToolbar)
 
+
         // get reference to ImageView
         val image = findViewById<ImageView>(R.id.addToDoScreen)
         todoRecycleView = findViewById<RecyclerView>(R.id.todoList)
