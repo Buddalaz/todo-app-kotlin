@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailToDo">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -16,86 +16,77 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="120dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/myToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:title="Detail"
-                app:titleMarginStart="130dp"
+                app:title="Add New"
+                app:titleMarginStart="430dp"
                 app:titleTextColor="@color/black" />
 
             <ImageView
-                android:id="@+id/btnBackHome"
-                android:layout_width="31dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="16dp"
+                android:id="@+id/todoHome"
+                android:layout_width="58dp"
+                android:layout_height="53dp"
+                android:layout_marginStart="44dp"
                 android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.52"
+                app:layout_constraintVertical_bias="0.505"
                 app:srcCompat="@drawable/ic_back" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <EditText
-        android:id="@+id/detail_txtTitle"
-        android:layout_width="272dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/todoTitle"
+        android:layout_width="495dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="176dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/detail_title"
+        android:hint="@string/add_todo_title"
         android:inputType="textPersonName"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="249dp"
+        android:layout_height="76dp"
+        android:text="@string/add"
+        android:textSize="30sp"
+        app:backgroundTint="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todoDescription"
+        app:layout_constraintVertical_bias="0.242" />
 
     <EditText
-        android:id="@+id/detail_txtDescription"
-        android:layout_width="268dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/todoDescription"
+        android:layout_width="503dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="160dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/detail_description"
+        android:hint="@string/add_todo_description"
         android:inputType="textPersonName"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_txtTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/todoTitle" />
 
-    <Button
-        android:id="@+id/detail_btnDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="180dp"
-        android:text="@string/detail_btnDelete"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/detail_btnEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="180dp"
-        android:text="@string/detail_btnEdit"
-        app:backgroundTint="@color/green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/detail_btnDelete" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddToDo">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -22,69 +21,56 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/myToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:title="Add New"
-                app:titleMarginStart="120dp"
+                app:title="To Do List"
+                app:titleMarginStart="425dp"
                 app:titleTextColor="@color/black" />
 
             <ImageView
-                android:id="@+id/todoHome"
-                android:layout_width="31dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="16dp"
+                android:id="@+id/addToDoScreen"
+                android:layout_width="46dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="28dp"
                 android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/myToolbar"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.52"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/ic_add" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <EditText
-        android:id="@+id/todoTitle"
-        android:layout_width="257dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="68dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/add_todo_title"
-        android:inputType="textPersonName"
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="786dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/searchview_background"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="search to do"
+        app:layout_constraintBottom_toTopOf="@+id/todoList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.488"
+        tools:targetApi="lollipop" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="106dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/add"
-        app:backgroundTint="@color/light_blue"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todoList"
+        android:layout_width="963dp"
+        android:layout_height="1402dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/todoDescription" />
+        tools:listitem="@layout/single_todo">
 
-    <EditText
-        android:id="@+id/todoDescription"
-        android:layout_width="257dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/add_todo_description"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/todoTitle" />
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
